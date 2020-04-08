@@ -4,14 +4,15 @@
   "main": "login.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon login_page2/login.js "
+    "start": "nodemon login_page2/login.js "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
