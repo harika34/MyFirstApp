@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>simple Login page</title>
+	</head>
+	<style>
+		body {
+			background-image: url('ocean.jpg');
+			background-size:cover;
+			text-align: center;
+			width: 300px;
+			height: 200px; 
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -50px; 
+			margin-left: -150px; 
+		}
+		
+	</style>	
+<body>
+	<h1 style="color:blue;text-align:center;"><i><b>Sample Login Page</b></i></h1>
+	
+	<form>
+	
+		<label><b>Username </b></label>&nbsp;
+		<input type="text" placeholder="Username" name="username" required><br/><br/>
+		<div id="name_error"></div>
+		<label ><b>Password</b></label>&nbsp; &nbsp;
+		<input type="password" placeholder="Password" name="password" required><br><br>
+		<input type="button" class = "submit"  value="Log In" name = "submit" onclick="validate">
+	</form>
+
+	<script type="text/javascript" src="demo.js"> </script>
+	
+
+</body>
+
+
+</html>
