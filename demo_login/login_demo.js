@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
+var connection = mysql.createConnection({
 
     host: "localhost",
     user: "root",
@@ -9,41 +9,27 @@ var con = mysql.createConnection({
 
 });
 
-function getResults(){
-con.query("SELECT * FROM Users", function (err, result) {
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
 
-    console.log(result);
-    return result;
-});
-
-};
 
 function validate() {
 
-    var userDetails =  getResults();
-    console.log(userDetails);
+    if (username && password) {
+		connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+			if (results.length > 0) {
+				response.send('logged successfully');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
 
-     let username = document.getElementById("username").value;
-     let password = document.getElementById("password").value;
-
-    var isExists = false;
-
-        if (username == userDetails[i].username && password == userDetails[i].password) {
-            isExists = true;
-        }
-
-
-    }
-
-    if (isExists) {
-        alert("logged successfully");
-        console.log('logged successfyully');
-    }
-    else {
-        alert("username or password is incorrect");
-        console.log('username or password is incorrect');
-    }
-
+}
 
 
 validate();
